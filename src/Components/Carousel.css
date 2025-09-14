@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap');
+
+
+.slider {
+  position: relative;
+  width:100%;
+  height: 100vh;
+  margin-bottom: 2rem; 
+  overflow: hidden;
+}
+.slider .list .item{
+    position: absolute;
+    inset: 0 0 0 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: 2s;
+} 
+.slider .list .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: none;
+    opacity: 1;
+}
+.slider .item::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 86, 210, 0.4);
+  z-index: 1;
+}
+.slider .list .item::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    }
+.slider .list .item .content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 900px;
+  z-index: 2;
+  text-align: center;
+  padding: 1rem;
+  color: #FFFFFF;
+  font-family: 'Geologica';
+
+}
+.slider .list .item .content p:nth-child(1){
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+.slider .list .item .content h2{
+    font-size: 60px;
+    margin: 0;
+}
+.slider .list .item.active{
+    opacity: 1;
+    z-index: 10;
+}
+@keyframes showContent {
+    to {
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.slider .list .item.active p:nth-child(1),
+.slider .list .item.active h2,
+.slider .list .item.active p:nth-child(3) {
+  animation: fadeInScale 1.3s ease-in-out forwards;
+  opacity: 0;
+  transform: scale(0.9);
+}
+.slider .list .item.active p:nth-child(1) {
+  animation-delay: 0.3s;
+}
+.slider .list .item.active h2 {
+  animation-delay: 0.6s;
+}
+.slider .list .item.active p:nth-child(3) {
+  animation-delay: 0.9s;
+}
+
+
+.btn {
+            width: 212px;
+            height: 53px;
+            background-color: #0056D2;
+            border-radius: 10px;
+            border: none;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            line-height: 53px;
+            text-align: center;
+            margin: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 86, 210, 0.3);
+}
+
+
+.btn:hover {
+ background-color: #4cc9f0;
+ color: #fff;
+ box-shadow: 0 2px 0 2px #0d3b66;
+}
+
+.btn:hover::before {
+ transform: skewX(30deg) translate(150%, -50%);
+ transition-delay: 0.1s;
+}
+
+.btn:active {
+ transform: scale(0.9);
+}
+
+.carousel-btn:hover {
+  background-color: var(--highlight);
+  color: #333;
+}
+
+.slider .list .item.active h2{
+    animation-delay: 1s;
+}
+.slider .list .item.active p:nth-child(3){
+    animation-duration: 1.3s;
+}
+
+.thumbnail::-webkit-scrollbar{
+    width: 0;
+}
