@@ -5,7 +5,7 @@ import { BiArrowToRight } from "react-icons/bi";
 const Hero = () => {
   return (
     <section 
-        className="h-[91vh] bg-cover bg-center md:bg-[50%_60%] text-white flex flex-col items-center justify-center gap-2 text-center"
+        className="h-[91vh] bg-cover bg-center md:bg-[50%_60%] bg-fixed text-white flex flex-col items-center justify-center gap-2 text-center"
         style={{ backgroundImage: `url(${heroImage})` }}>
     
         <h1 className='font-bold text-5xl/16 md:text-7xl/24 text-shadow-heading text-balance w-md md:w-xl'>Welcome to CampusConnect</h1>
